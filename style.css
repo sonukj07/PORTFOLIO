@@ -1,0 +1,305 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.hero-text h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-left: 30px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Hero Section - Single Image */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+
+.about, .portfolio, .travel-blog, .contact {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.about h2, .portfolio h2, .travel-blog h2, .contact h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* About Section Layout */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Makes it responsive on smaller screens */
+    gap: 40px;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.about p, .contact p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+.portfolio {
+    padding: 50px 5px;
+    background-color: #f9f9f9;
+}
+
+.portfolio-section {
+    margin-bottom: 50px;
+}
+
+.portfolio-section h3 {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+}
+
+.gallery img {
+    width: 100%;
+    max-height: 500px;  /* Adjust this value to control the image height */
+    object-fit: cover;  /* Ensures the image fills the frame without distortion */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-content p{
+    font-family: 'Courier New', Courier, monospace;
+}
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    gap: 50px;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* ===================== */
+/* ✅ MEDIA QUERIES FOR RESPONSIVENESS */
+/* ===================== */
+
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .navbar li {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+        padding: 10px 20px;
+    }
+
+    .about-text h2, .about h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    .portfolio-section h3 {
+        font-size: 1rem;
+    }
+
+    .gallery img {
+        max-height: 250px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
